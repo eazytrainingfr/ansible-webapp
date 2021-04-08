@@ -10,11 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: launch tower job
-        uses: vortegon/github-action-ansible-tower@v1
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
         with:
-          ansible-tower-user: ${{ secrets.ANSIBLE_USER }}
-          ansible-tower-pass: ${{ secrets.ANSIBLE_PASSWORD }}
-          ansible-tower-url: ${{ secrets.ANSIBLE_URL }}
-          template-id: "10"
+          path: 'webapp'
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible-tower-cli
+      
+      - name: deploy
+        run: |
+          tower-cli config host ${{ secret.ANSIBLE_URL }}
+          tower-cli config username ${{ secret.ANSIBLE_USER }}
+          tower-cli config password ${{ secret.ANSIBLE_PASSWORD }}
+          tower-cli job launch --job-template=10 
           
