@@ -1,0 +1,20 @@
+---
+name: CI
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: launch tower job
+        uses: vortegon/github-action-ansible-tower@v1
+        with:
+          ansible-tower-user: ${{ secrets.ANSIBLE_USER }}
+          ansible-tower-pass: ${{ secrets.ANSIBLE_PASSWORD }}
+          ansible-tower-url: ${{ secrets.ANSIBLE_URL }}
+          template-id: "10"
+          
