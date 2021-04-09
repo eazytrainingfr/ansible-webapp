@@ -7,7 +7,7 @@
 -
 
   # Hosts: where our play will run and options it will run with
-  hosts: linux
+  hosts: "{{ infra | default('linux') }}"
   tasks:
     - name: "Run nginx role from collection"
       import_role:
