@@ -1,4 +1,8 @@
 # ansible-webapp
 
 
-[![CI](https://github.com/eazytrainingfr/ansible-webapp/workflows/CI/badge.svg?event=push)](https://github.com/eazytrainingfr/ansible-webapp/actions?query=workflow%3ACI)
+[![DEV](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/dev.yml/badge.svg)](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/dev.yml)
+
+[![PREPROD](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/preprod.yml/badge.svg)](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/preprod.yml)
+
+[![PROD](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/prod.yml/badge.svg)](https://github.com/eazytrainingfr/ansible-webapp/actions/workflows/prod.yml)
