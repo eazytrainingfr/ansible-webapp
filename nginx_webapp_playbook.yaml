@@ -7,7 +7,7 @@
 -
 
   # Hosts: where our play will run and options it will run with
-  hosts: "{{ environment | default('linux')}}"
+  hosts: "{{ environment | default('linux') }}"
   tasks:
     - name: "Run nginx role from collection eazytraining.webapp"
       import_role:
